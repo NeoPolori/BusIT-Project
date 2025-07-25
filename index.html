@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>AgriSence - Smart Farming Assistant</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="branding">
+          <img class="logo" src="a cartoon-style farmer in blue and black colors.png" alt="AgriSence Logo" />
+            <div>
+                <h1 class="company-name">AgriSence</h1>
+                <p class="tagline">Smart Farming Solutions</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-item">
+                <a href="#" class="nav-link active">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Profile</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Services ▼</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-link">🌾 Crop Advisory</a>
+                    <a href="#" class="dropdown-link">💧 Irrigation Planning</a>
+                    <a href="#" class="dropdown-link">🔄 Crop Rotation</a>
+                    <a href="#" class="dropdown-link">🔬 Soil Analysis</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Others ▼</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-link">🌤️ Weather Data</a>
+                    <a href="#" class="dropdown-link">📈 Historical Trends</a>
+                    <a href="#" class="dropdown-link">⚙️ Equipment Status</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="dashboard">
+            <div class="sensor-grid">
+                <!-- Water Sensor -->
+                <section class="sensor-card sensor-water">
+                    <div class="sensor-header">
+                      <img src="a cartoon-style water droplet with a white background, more cartoonish.png" alt="Water Sensor" />
+                        <button class="info-trigger" aria-label="Water sensor information">i</button>
+                        <h3>Water Sensor</h3>
+                    </div>
+                    <p class="sensor-value" id="water-value">--%</p>
+                    <div class="sensor-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="sensor-details">
+                        <p>Ideal Range: 40-60%</p>
+                        <p>Last Updated: <span class="update-time">--:--</span></p>
+                    </div>
+                </section>
+
+                <!-- Soil Sensor -->
+                <section class="sensor-card sensor-soil">
+                    <div class="sensor-header">
+                      <img src="a cartoonish soil image with no background.png" alt="Soil Sensor" />   
+                        <button class="info-trigger" aria-label="Soil sensor information">i</button>
+                        <h3>Soil Sensor</h3>
+                    </div>
+                    <p class="sensor-value" id="soil-value">-- pH</p>
+                    <div class="sensor-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="sensor-details">
+                        <p>Ideal Range: 6.0-7.0 pH</p>
+                        <p>Last Updated: <span class="update-time">--:--</span></p>
+                    </div>
+                </section>
+
+                <!-- Sunlight Sensor -->
+                <section class="sensor-card sensor-sun">
+                    <div class="sensor-header">
+                      <img src="cartoonish sunlight used to grow a plant, more cartoonish, white background, less visible plant focusing more on the sun.png" alt="Sunlight Sensor" />
+                        <button class="info-trigger" aria-label="Sunlight sensor information">i</button>
+                        <h3>Sunlight Sensor</h3>
+                    </div>
+                    <p class="sensor-value" id="sun-value">-- lux</p>
+                    <div class="sensor-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="sensor-details">
+                        <p>Ideal Range: 30,000-80,000 lux</p>
+                        <p>Last Updated: <span class="update-time">--:--</span></p>
+                    </div>
+                </section>
+            </div>
+
+            <section class="graph-container">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Sensor Data Graph</h2>
+                <div class="graph-wrapper">
+                    <div id="chart-container">[Interactive Chart]</div>
+                </div>
+            </section>
+
+            <div class="status-grid">
+                <section class="status-card recommendations">
+                    <h2 class="section-title"><i class="fas fa-lightbulb"></i> Recommendations</h2>
+                    <ul class="status-list" id="recommendation-list">
+                        <li class="status-item">✅ Optimal watering conditions</li>
+                        <li class="status-item">🌱 Add nitrogen fertilizer</li>
+                        <li class="status-item">💧 Schedule morning irrigation</li>
+                    </ul>
+                </section>
+
+                <section class="status-card alerts">
+                    <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> Alerts</h2>
+                    <ul class="status-list" id="alerts-list">
+                        <li class="status-item alert-item">⚠️ Soil pH acidic (6.2)</li>
+                        <li class="status-item alert-item">⚠️ Rapid water level drop</li>
+                    </ul>
+                </section>
+
+                <section class="status-card support">
+                    <h2 class="section-title"><i class="fas fa-headset"></i> Support</h2>
+                    <ul class="status-list" id="support-list">
+                        <li class="status-item"><i class="fas fa-graduation-cap"></i> Learning Hub</li>
+                        <li class="status-item"><i class="fas fa-users"></i> Community</li>
+                        <li class="status-item"><i class="fas fa-tools"></i> Tech Support</li>
+                        <li class="status-item"><i class="fas fa-file-contract"></i> Terms</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>About AgriSence</h3>
+                <p>Empowering farmers since 2025</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">Services</a></li>
+                    <li><a href="#" class="footer-link">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 010 593 5368</li>
+                    <li><i class="fas fa-envelope"></i> support@agrisence.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Akasia, 0182</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-link">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AgriSence Technologies</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateSensorData() {
+            // Water Sensor
+            document.getElementById('water-value').textContent = '58%';
+            document.querySelector('.sensor-water .progress-bar').style.width = '72%';
+            
+            // Soil Sensor
+            document.getElementById('soil-value').textContent = '6.2 pH';
+            document.querySelector('.sensor-soil .progress-bar').style.width = '40%';
+            
+            // Sunlight Sensor
+            document.getElementById('sun-value').textContent = '42,500 lux';
+            document.querySelector('.sensor-sun .progress-bar').style.width = '60%';
+            
+            // Update timestamps
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.querySelectorAll('.update-time').forEach(el => el.textContent = time);
+        }
+
+        setTimeout(updateSensorData, 1500);
+        setInterval(updateSensorData, 30000);
+    </script>
+</body>
+</html>
